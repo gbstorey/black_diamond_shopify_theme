@@ -556,6 +556,10 @@ video {
   }
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -827,6 +831,14 @@ video {
 
 .w-80 {
   width: 20rem;
+}
+
+.w-0 {
+  width: 0px;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .max-w-4xl {
@@ -1501,6 +1513,10 @@ video {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-auto {
+    width: auto;
   }
 
   .md\:max-w-lg {
