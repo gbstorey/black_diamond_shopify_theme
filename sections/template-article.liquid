@@ -44,10 +44,7 @@
 
       <div itemprop="image" class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
         {% if article.image != blank %}
-          <img
-            class="w-full h-80 md:h-96 object-cover object-center"
-            src="{{ article.image | img_url: 'larger'}}"
-            alt=" {{ article.image.alt }}" />
+          {{ article.image | image_url: width: 400 | image_tag: class: "w-full h-80 md:h-96 object-cover object-center", alt: article.image.alt }}
         {% else %}
           {% assign placeholder_image = 'lifestyle-2' %}
           {{ placeholder_image | placeholder_svg_tag: 'w-full h-80 md: h-96 object-cover object-center p-5' }}
@@ -186,71 +183,73 @@
 <script type="application/ld+json">
   {
   "@context": "http://schema.org",
-                "@type": "BlogPosting",
-                "headline": {{ article.title | json }},
+                                "@type": "BlogPosting",
+                                "headline": {{ article.title | json }},
   "articleBody": {{ article.content | strip_html | json }},
   {% if article.excerpt != blank %}
     "description" : {{ article.excerpt | strip_html | json }},
   {% endif %}
   {% if article.image %}
     "image": [
-    {{ article.image | img_url: "medium" | prepend: 'https:' | json }}
+    {{ article.image | image_url: width: 100 | prepend: 'https:' | json }}
     ]
   {% endif %}
   "datePublished": {{ article.published_at | date: format: "default" | json }},
   "dateCreated": {{ article.created_at | date: format: "default" | json }},
   "author": {
-                    "@type": "Person",
-                    "name": {{ article.author | json }}
+                                    "@type": "Person",
+                                    "name": {{ article.author | json }}
   },
   "publisher": {
-                    "@type": "Organization",
-                    "name": {{ shop.name | json }}
+                                    "@type": "Organization",
+                                    "name": {{ shop.name | json }}
   }
   }
 </script>
 
 {% schema %}
-  {
-    "name": "Template Article",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "enable_author",
-        "default": true,
-        "label": "Display Author Name"
-      }, {
-        "type": "checkbox",
-        "id": "enable_published_date",
-        "default": true,
-        "label": "Display Published Date"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "article_title",
-        "name": "Title",
-        "limit": 1
-      },
-      {
-        "type": "article_author",
-        "name": "Author",
-        "limit": 1
-      },
-      {
-        "type": "article_published_date",
-        "name": "Published Date",
-        "limit": 1
-      },
-      {
-        "type": "featured_image",
-        "name": "Thumbnail",
-        "limit": 1
-      }, {
-        "type": "article_content",
-        "name": "Content",
-        "limit": 1
-      }
-    ]
-  }
+{
+  "name": "Template Article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_author",
+      "default": true,
+      "label": "Display Author Name"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_published_date",
+      "default": true,
+      "label": "Display Published Date"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article_title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "article_author",
+      "name": "Author",
+      "limit": 1
+    },
+    {
+      "type": "article_published_date",
+      "name": "Published Date",
+      "limit": 1
+    },
+    {
+      "type": "featured_image",
+      "name": "Thumbnail",
+      "limit": 1
+    },
+    {
+      "type": "article_content",
+      "name": "Content",
+      "limit": 1
+    }
+  ]
+}
 {% endschema %}

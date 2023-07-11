@@ -13,10 +13,9 @@
                   {% else %}
                     {% assign collection_image = collection.products.first.image %}
                   {% endif %}
-                  <img
-                    class="w-full h-full object-cover transition duration-500 ease-in-out transform hover:scale-105"
-                    src="{{ collection_image | img_url: 'medium' }}"
-                    alt="{{ collection.title | escape }}">
+
+                  {{ collection_image | image_url: width: 250 | image_tag: class: "w-full h-full object-cover transition duration-500 ease-in-out transform hover:scale-105", alt: collection.title }}
+
                 </div>
               </a>
               <div class="p-4 bg-gray-100">
@@ -31,15 +30,15 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Template List Collections",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "default": "Collections",
-        "label": "Title"
-      }
-    ]
-  }
+{
+  "name": "Template List Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Collections",
+      "label": "Title"
+    }
+  ]
+}
 {% endschema %}

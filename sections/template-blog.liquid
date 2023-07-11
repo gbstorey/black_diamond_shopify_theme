@@ -11,10 +11,7 @@
 
               <a href={{ article.url }}>
                 {% if article.image != blank %}
-                  <img
-                    class="w-full h-80 object-cover"
-                    src={{ article.image | img_url: "medium"}}
-                    alt={{ article.image.alt }} />
+                  {{ article.image | image_url: width: 400 | image_tag: class: "w-full h-80 object-cover", alt: article.image.alt }}
                 {% else %}
                   {{ 'image' | placeholder_svg_tag: 'w-full h-80 object-cover bg-gray-100' }}
                 {% endif %}
@@ -49,23 +46,24 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Blog",
-    "settings": [
-      {
-        "type": "text",
-        "id": "read_more_text",
-        "default": "Read More",
-        "label": "Read More Label"
-      }, {
-        "type": "range",
-        "id": "num_blog_posts",
-        "step": 1,
-        "min": 1,
-        "max": 6,
-        "label": "Blog posts per page",
-        "default": 3
-      }
-    ]
-  }
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "default": "Read More",
+      "label": "Read More Label"
+    },
+    {
+      "type": "range",
+      "id": "num_blog_posts",
+      "step": 1,
+      "min": 1,
+      "max": 6,
+      "label": "Blog posts per page",
+      "default": 3
+    }
+  ]
+}
 {% endschema %}

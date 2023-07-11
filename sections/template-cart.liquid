@@ -25,10 +25,7 @@
                 <td class="py-4 px-2 flex flex-col justify-center">
                   <a href={{ item.url }}>
                     {% if item.image %}
-                      <img
-                        src={{ item.image | img_url: 'small' }}
-                        alt={{ item.title | escape }}
-                        class="w-20 h-20 object-cover border">
+                      {{ item.image | image_url: width: 100 | image_tag: class: "w-20 h-20 object-cover border", alt: item.title }}
 
                     {% else %}
                       {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}
@@ -48,9 +45,9 @@
                   <input
                     type="number"
                     name="updates[]"
-                    value="{{item.quantity}}"
+                    value="{{ item.quantity }}"
                     min="1"
-                    id="updates_{{forloop.index}}"
+                    id="updates_{{ forloop.index }}"
                     class="w-20 border p-2">
                 </td>
                 <td class="py-4 px-2">
@@ -115,22 +112,24 @@
 {% endif %}
 
 {% schema %}
-  {
-    "name": "Template Cart",
-    "blocks": [
-      {
-        "type": "subtotal",
-        "name": "Subtotal",
-        "limit": 1
-      }, {
-        "type": "update_button",
-        "name": "Update Button",
-        "limit": 1
-      }, {
-        "type": "checkout_button",
-        "name": "Checkout Button",
-        "limit": 1
-      }
-    ]
-  }
+{
+  "name": "Template Cart",
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "Subtotal",
+      "limit": 1
+    },
+    {
+      "type": "update_button",
+      "name": "Update Button",
+      "limit": 1
+    },
+    {
+      "type": "checkout_button",
+      "name": "Checkout Button",
+      "limit": 1
+    }
+  ]
+}
 {% endschema %}

@@ -1,9 +1,11 @@
 {
-      "name": "Template Page",
-      "sections": {
-            "template": {
-                  "type": "template-page"
-            }
-      },
-      "order": ["template"]
+  "name": "Template Page",
+  "sections": {
+    "template": {
+      "type": "template-page"
+    }
+  },
+  "order": [
+    "template"
+  ]
 }

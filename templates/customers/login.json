@@ -1,9 +1,11 @@
 {
-      "name": "Template Customer Login",
-      "sections": {
-            "template": {
-                  "type": "template-customer-login"
-            }
-      },
-      "order": ["template"]
+  "name": "Template Customer Login",
+  "sections": {
+    "template": {
+      "type": "template-customer-login"
+    }
+  },
+  "order": [
+    "template"
+  ]
 }

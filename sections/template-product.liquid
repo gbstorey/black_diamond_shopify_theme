@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+{{ 'swiper.css' | asset_url | stylesheet_tag }}
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script defer src="{{ 'swiper.js' | asset_url }}"></script>
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
@@ -234,6 +234,9 @@
         if (oldPrice && newPrice) 
           oldPrice.innerHTML = newPrice.innerHTML;
         
+
+
+
       })
     }
 
@@ -242,54 +245,59 @@
 </script>
 
 <script>
-  const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    pagination: {
-      el: '.swiper-pagination'
-    },
-    navigation: {
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next'
-    }
-  })
+  window.onload = function() {
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next'
+      }
+    })
+  }
 </script>
 
 {% schema %}
-  {
-    "name": "Product",
-    "blocks": [
-      {
-        "type": "vendor",
-        "name": "Vendor",
-        "limit": 1
-      },
-      {
-        "type": "title",
-        "name": "Title",
-        "limit": 1
-      },
-      {
-        "type": "price",
-        "name": "Price",
-        "limit": 1
-      },
-      {
-        "type": "variant_selector",
-        "name": "Variant Selector",
-        "limit": 1
-      }, {
-        "type": "quantity",
-        "name": "Quantity",
-        "limit": 1
-      }, {
-        "type": "description",
-        "name": "Description",
-        "limit": 1
-      }, {
-        "type": "checkout_buttons",
-        "name": "Checkout Buttons",
-        "limit": 1
-      }
-    ]
-  }
+{
+  "name": "Product",
+  "blocks": [
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1
+    },
+    {
+      "type": "variant_selector",
+      "name": "Variant Selector",
+      "limit": 1
+    },
+    {
+      "type": "quantity",
+      "name": "Quantity",
+      "limit": 1
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    },
+    {
+      "type": "checkout_buttons",
+      "name": "Checkout Buttons",
+      "limit": 1
+    }
+  ]
+}
 {% endschema %}

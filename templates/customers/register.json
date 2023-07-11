@@ -1,9 +1,11 @@
 {
-      "name": "Template Register Login",
-      "sections": {
-            "template": {
-                  "type": "template-customer-register"
-            }
-      },
-      "order": ["template"]
+  "name": "Template Register Login",
+  "sections": {
+    "template": {
+      "type": "template-customer-register"
+    }
+  },
+  "order": [
+    "template"
+  ]
 }

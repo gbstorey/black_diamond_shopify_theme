@@ -14,36 +14,39 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Featured Collection",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "default": "Featured Collection",
-        "label": "Title"
-      }, {
-        "type": "collection",
-        "id": "featured_collection",
-        "label": "Collection"
-      }, {
-        "type": "range",
-        "id": "num_products",
-        "label": "Number of Products Shown",
-        "min": 4,
-        "max": 12,
-        "default": 4
-      }, {
-        "type": "checkbox",
-        "id": "showVendor",
-        "default": true,
-        "label": "Show the vendor name?"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Featured Collection"
-      }
-    ]
-  }
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Featured Collection",
+      "label": "Title"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "num_products",
+      "label": "Number of Products Shown",
+      "min": 4,
+      "max": 12,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "showVendor",
+      "default": true,
+      "label": "Show the vendor name?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
 {% endschema %}

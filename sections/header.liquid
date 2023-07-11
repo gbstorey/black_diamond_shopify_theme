@@ -8,10 +8,7 @@
       <div class="flex justify-start items-center lg:flex-1 truncate absolute left-1/2 md:left-0 transform -translate-x-1/2 md:transform-none md:relative">
         {% if section.settings.logoEnabled %}
           {% if section.settings.logo != blank %}
-            <img
-              class="h-20 w-20 mr-3"
-              src="{{ section.settings.logo | img_url: 'master' }}"
-              alt="{{  store.name }} Logo">
+            {{ section.settings.logo | image_url: width: 100 | image_tag: class: 'h-20 w-20 mr-3', alt: "Black Diamond Logo" }}
           {% else %}
             {{ 'image' | placeholder_svg_tag: 'h-20 mr-3' }}
           {% endif %}
@@ -186,25 +183,27 @@
 
 
 {% schema %}
-  {
-    "name": "Header",
-    "settings": [
-      {
-        "type": "text",
-        "id": "mobile_menu_title",
-        "label": "Title",
-        "default": "Black Diamond",
-        "info": "This is the title for the mobile menu window."
-      }, {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo Image"
-      }, {
-        "type": "checkbox",
-        "id": "logoEnabled",
-        "label": "Use logo image?",
-        "default": true
-      }
-    ]
-  }
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mobile_menu_title",
+      "label": "Title",
+      "default": "Black Diamond",
+      "info": "This is the title for the mobile menu window."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "logoEnabled",
+      "label": "Use logo image?",
+      "default": true
+    }
+  ]
+}
 {% endschema %}
