@@ -37,6 +37,12 @@
       "settings": {
         "message": "Thank you for being a part of our journey, for helping us help others, and for choosing Black Diamond. Together, we can make a difference and create a brighter future for everyone."
       }
+    },
+    "6d4c9f77-6dfb-4f8d-8c9e-9702bf2c3466": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact Us"
+      }
     }
   },
   "order": [
@@ -44,6 +50,7 @@
     "info-image-card",
     "2c029c89-4878-46f6-96ab-21ea0fd90482",
     "41158ca9-4594-4c0b-b69d-a41e4bc6ec30",
-    "centered-hero-text"
+    "centered-hero-text",
+    "6d4c9f77-6dfb-4f8d-8c9e-9702bf2c3466"
   ]
 }
