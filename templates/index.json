@@ -1,14 +1,24 @@
 {
-  "name": "Template Index",
-  "sections": {
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "featured_collection": "all"
-      }
-    }
-  },
-  "order": [
-    "featured-collection"
-  ]
+      "name": "Template Index",
+      "sections": {
+            "featured-collection": {
+                  "type": "featured-collection",
+                  "settings": {
+                        "featured_collection": "all"
+                  }
+            },
+            "hero-section": {
+                  "type": "hero-section",
+                  "settings": {
+                        "hero-section": "all"
+                  }
+            },
+            "featured-organizations": {
+                  "type": "featured-organizations",
+                  "settings": {
+                        "featured-organizations": "all"
+                  }
+            }
+      },
+      "order": ["hero-section", "featured-organizations", "featured-collection"]
 }
