@@ -14,6 +14,15 @@
         "imagePosition": "object-center"
       }
     },
+    "2c029c89-4878-46f6-96ab-21ea0fd90482": {
+      "type": "info-image-card",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/pexels-anna-shvets-3845458_1.jpg",
+        "cardText": "At Black Diamond, our dedication goes beyond mere business. We have an unwavering commitment to making a difference in the lives of those who face challenges in providing for themselves. Our journey begins with Angela, our beloved daughter and only child with Down Syndrome. She has inspired us to build a business that not only serves our customers but also serves a greater purpose.",
+        "orientation": "flex-row-reverse",
+        "imagePosition": "object-center"
+      }
+    },
     "centered-hero-text": {
       "type": "centered-hero-text",
       "settings": {
@@ -24,6 +33,7 @@
   "order": [
     "template",
     "info-image-card",
+    "2c029c89-4878-46f6-96ab-21ea0fd90482",
     "centered-hero-text"
   ]
 }
