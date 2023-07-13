@@ -1,21 +1,29 @@
 {
-      "name": "Template Page",
-      "sections": {
-            "template": {
-                  "type": "template-page"
-            },
-            "info-image-card": {
-                  "type": "info-image-card",
-                  "settings": {
-                        "info-image-card": "all"
-                  }
-            },
-            "centered-hero-text": {
-                  "type": "centered-hero-text",
-                  "settings": {
-                        "centered-hero-text": "all"
-                  }
-            }
-      },
-      "order": ["template", "info-image-card", "centered-hero-text"]
+  "sections": {
+    "template": {
+      "type": "template-page",
+      "settings": {
+      }
+    },
+    "info-image-card": {
+      "type": "info-image-card",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20230702_124030_67b5672c-25fb-4da1-91f8-1f875ef585cb.jpg",
+        "cardText": "Welcome to Black Diamond, a small but deeply committed business on a mission to provide you with access to a vast collection of enduring, high-quality products. From soft, cozy, and beautiful blankets to exquisite rugs that enhance the beauty and comfort of your home, we offer a diverse range of sports items that cater to everyone's tastes.",
+        "orientation": "flex-row",
+        "imagePosition": "object-center"
+      }
+    },
+    "centered-hero-text": {
+      "type": "centered-hero-text",
+      "settings": {
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    }
+  },
+  "order": [
+    "template",
+    "info-image-card",
+    "centered-hero-text"
+  ]
 }
