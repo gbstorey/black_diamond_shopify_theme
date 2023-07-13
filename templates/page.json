@@ -1,11 +1,21 @@
 {
-  "name": "Template Page",
-  "sections": {
-    "template": {
-      "type": "template-page"
-    }
-  },
-  "order": [
-    "template"
-  ]
+      "name": "Template Page",
+      "sections": {
+            "template": {
+                  "type": "template-page"
+            },
+            "info-image-card": {
+                  "type": "info-image-card",
+                  "settings": {
+                        "info-image-card": "all"
+                  }
+            },
+            "centered-hero-text": {
+                  "type": "centered-hero-text",
+                  "settings": {
+                        "centered-hero-text": "all"
+                  }
+            }
+      },
+      "order": ["template", "info-image-card", "centered-hero-text"]
 }

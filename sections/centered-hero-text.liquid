@@ -1,0 +1,22 @@
+<div class="flex flex-col items-center justify-center text-center max-w-4xl mx-auto my-4">
+  <p class="font-thin text-3xl leading-10">{{ section.settings.message }}</p>
+</div>
+
+{% schema %}
+  {
+    "name": "Important Message",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "message",
+        "label": "Message Text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Important Message"
+      }
+    ]
+  }
+{% endschema %}

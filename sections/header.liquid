@@ -84,6 +84,7 @@
 
         {% if shop.customer_accounts_enabled %}
           {% if customer %}
+            <a href={{ routes.account_url }} class="text-base text-gray-500 hover:text-gray-900">Account</a>
             <a href={{ routes.account_logout_url }} class="text-base text-gray-500 hover:text-gray-900">Logout</a>
           {% else %}
             <a href={{ routes.account_login_url }} class="text-base text-gray-500 hover:text-gray-900">Login</a>
@@ -183,27 +184,25 @@
 
 
 {% schema %}
-{
-  "name": "Header",
-  "settings": [
-    {
-      "type": "text",
-      "id": "mobile_menu_title",
-      "label": "Title",
-      "default": "Black Diamond",
-      "info": "This is the title for the mobile menu window."
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo Image"
-    },
-    {
-      "type": "checkbox",
-      "id": "logoEnabled",
-      "label": "Use logo image?",
-      "default": true
-    }
-  ]
-}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "mobile_menu_title",
+        "label": "Title",
+        "default": "Black Diamond",
+        "info": "This is the title for the mobile menu window."
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo Image"
+      }, {
+        "type": "checkbox",
+        "id": "logoEnabled",
+        "label": "Use logo image?",
+        "default": true
+      }
+    ]
+  }
 {% endschema %}
