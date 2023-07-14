@@ -1,17 +1,19 @@
-<div class="flex flex-wrap mt-8 gap-4 max-w-md md:max-w-4xl mx-auto justify-center">
-  {% for collection in section.settings.collection_list %}
-    {% if collection.featured_image != blank %}
-      {% assign collection_image = collection.featured_image %}
-    {% else %}
-      {% assign collection_image = collection.products.first.image %}
-    {% endif %}
+<div class="bg-gray-800 pb-8 max-w-md md:max-w-6xl mx-auto">
+  <div class="flex flex-wrap gap-4 justify-center md:max-w-4xl mx-auto pt-6">
+    {% for collection in section.settings.collection_list %}
+      {% if collection.featured_image != blank %}
+        {% assign collection_image = collection.featured_image %}
+      {% else %}
+        {% assign collection_image = collection.products.first.image %}
+      {% endif %}
 
-    <div class="w-32 h-32 md:w-36 md:h-36 p-6 border-4 border-gray-400/50 rounded-full shadow-lg shadow-gray-600">
-      <a href="{{ collection.url }}">
-        {{ collection_image | image_url: width: 200 | image_tag: class: "w-full h-full object-cover transition duration-500 ease-in-out transform hover:scale-105", alt: collection.title }}
-      </a>
-    </div>
-  {% endfor %}
+      <div class="w-32 h-32 md:w-36 md:h-36 rounded-full>
+        <a href="{{ collection.url }}">
+          {{ collection_image | image_url: width: 200 | image_tag: class: "w-full h-full object-cover transition duration-500 ease-in-out rounded-full border-2 border-gray-900 hover:border-4", alt: collection.title }}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}
@@ -23,6 +25,11 @@
         "id": "collection_list",
         "label": "Collections",
         "limit": 5
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Organizations"
       }
     ]
   }
