@@ -1,5 +1,5 @@
 <div
-  class="relative bg-gray-800 text-white max-w-6xl mx-auto py-6 md:py-0"
+  class="relative bg-gray-800 text-white max-w-6xl mx-auto py-6 px-6 md:py-0"
   x-data="{ mobileMenuOpen: false, searchBarOpen: false }"
   x-cloak>
   <div class="mx-auto max-w-6xl sm:px-6 md:px-0">
@@ -158,25 +158,25 @@
     </div>
   </div>
 
-  <div x-show="searchBarOpen" class="w-full absolute top-0 bg-gray-800 mx-auto">
-    <div class="h-40 flex justify-center items-center w-full">
+  <div x-show="searchBarOpen" class="w-full absolute top-0 right-0 bg-gray-800 mx-auto">
+    <div class="h-40 flex justify-center items-center w-11/12 mx-auto">
       <button
         type="button"
         x-on:click="searchBarOpen = false"
-        class="absolute top-0 right-0 mt-5 text-white">
+        class="absolute top-0 right-12 mt-5 text-white">
         {% render 'icon-close' %}
       </button>
       <form
         action="{{ routes.search_url }}"
         method="get"
         class="flex-auto">
-        <div class="relative pl-6 pr-1">
+        <div class="relative pl-6 pr-1 text-center">
           <input
-            class="w-full bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+            class="w-5/6 bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none text-gray-900"
             type="search"
             name="q"
             placeholder="Search...">
-          <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 md:mr-20">
+          <button type="submit" class="transform translate-x-4 translate-y-1 text-lg">
             {% render 'icon-search' %}
           </button>
         </div>

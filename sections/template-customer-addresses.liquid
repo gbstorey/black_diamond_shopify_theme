@@ -1,28 +1,34 @@
 <div
-  class="max-w-6xl mx-auto px-4 py-12"
+  class="max-w-6xl mx-auto px-6 py-12"
   x-data="{ new_address: false }"
   x-cloak>
 
   <div class="flex flex-col md:flex-row items-center justify-between my-5 gap-4">
-    <h1 class="text-2xl font-bold text-gray-700">Addresses</h1>
+    <h1 class="text-2xl font-bold ">Addresses</h1>
     <button x-on:click="new_address = true" class="text-white font-medium bg-gray-700 hover:bg-gray-900 px-6 py-2">Create new address</button>
     <a href="{{ routes.account_url }}" class="text-blue-600 hover:text-blue-800 font-medium underline">Back to account</a>
   </div>
 
   <!-- New Address -->
 
-  <div x-show="new_address" class="h-full w-full fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto z-50">
-    <div class="relative max-w-md mx-auto bg-white border top-20 p-4">
+  <div x-show="new_address" class="h-full w-full fixed inset-0 bg-gray-900 bg-opacity-50 overflow-y-auto z-50">
+    <div class="relative max-w-md mx-auto border top-20 p-4 bg-gray-800">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-lg font-medium">New Address</h2>
-        <button class="text-gray-500" x-on:click="new_address = false">{% render 'icon-close' %}</button>
+        <button x-on:click="new_address = false">{% render 'icon-close' %}</button>
       </div>
 
+      <style>
+        .address-form input {
+          color: black
+        }
+      </style>
+
       {% form 'customer_address', customer.new_address %}
-        <div class="mb-4">
-          <label for="address_fname_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">First Name</label>
+        <div class="mb-4 address-form">
+          <label for="address_fname_{{ form.id }}" class="uppercase text-xs font-medium mb-2">First Name</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full border px-4 py-3 focus:outline-none"
             type="text"
             name="address[first_name]"
             value="{{ form.first_name }}"
@@ -30,9 +36,9 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_lname_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Last Name</label>
+          <label for="address_lname_{{ form.id }}" class="uppercase text-xs font-medium mb-2">Last Name</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full border px-4 py-3 focus:outline-none"
             type="text"
             name="address[last_name]"
             value="{{ form.last_name }}"
@@ -40,9 +46,9 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_company_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Company</label>
+          <label for="address_company_{{ form.id }}" class="uppercase text-xs font-medium mb-2">Company</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full border px-4 py-3 focus:outline-none"
             type="text"
             name="address[company]"
             value="{{ form.company }}"
@@ -50,9 +56,9 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_address1_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Address 1</label>
+          <label for="address_address1_{{ form.id }}" class="uppercase text-xs font-medium mb-2">Address 1</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full border px-4 py-3 focus:outline-none"
             type="text"
             name="address[address1]"
             value="{{ form.address1 }}"
@@ -60,9 +66,9 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_address2_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Address 2</label>
+          <label for="address_address2_{{ form.id }}" class="uppercase text-xs font-medium mb-2">Address 2</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full border px-4 py-3 focus:outline-none"
             type="text"
             name="address[address2]"
             value="{{ form.address2 }}"
@@ -70,9 +76,9 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_city_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">City</label>
+          <label for="address_city_{{ form.id }}" class="uppercase text-xs font-medium mb-2">City</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full border px-4 py-3 focus:outline-none"
             type="text"
             name="address[city]"
             value="{{ form.city }}"
@@ -80,11 +86,11 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_country_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Country</label>
+          <label for="address_country_{{ form.id }}" class="uppercase text-xs font-medium mb-2">Country</label>
           <select
             data-country-selector
             data-id="{{ form.id }}"
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full border px-4 py-3 focus:outline-none"
             name="address[country]"
             value="{{ form.country }}"
             id="address_country_{{ form.id }}">
@@ -93,18 +99,18 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_province_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Province</label>
+          <label for="address_province_{{ form.id }}" class="uppercase text-xs font-medium mb-2">Province</label>
           <select
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full  border px-4 py-3 focus:outline-none"
             name="address[province]"
             value="{{ form.province }}"
             id="address_province_{{ form.id }}"></select>
         </div>
 
         <div class="mb-4">
-          <label for="address_zip_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Postal/ZIP Code</label>
+          <label for="address_zip_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Postal/ZIP Code</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full  border px-4 py-3 focus:outline-none"
             type="text"
             name="address[zip]"
             value="{{ form.city }}"
@@ -112,9 +118,9 @@
         </div>
 
         <div class="mb-4">
-          <label for="address_phone_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Phone Number</label>
+          <label for="address_phone_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Phone Number</label>
           <input
-            class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            class="w-full  border px-4 py-3 focus:outline-none"
             type="tel"
             name="address[phone]"
             value="{{ form.phone }}"
@@ -123,12 +129,12 @@
 
         <div class="mb-4">
           {{ form.set_as_default_checkbox }}
-          <label for="address_default_address_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Set as default address?</label>
+          <label for="address_default_address_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Set as default address?</label>
         </div>
 
         <div class="flex flex-row gap-2">
           <button type="submit" class="w-full font-medium text-white bg-gray-700 hover:bg-gray-900 px-4 py-2">Create Address</button>
-          <button type="reset" class="w-full font-medium text-gray-700 border border-gray-700 px-4 py-2">Cancel</button>
+          <button type="reset" class="w-full font-medium  border border-gray-700 px-4 py-2">Cancel</button>
         </div>
 
       {% endform %}
@@ -157,7 +163,7 @@
                 <button
                   data-delete-address
                   data-url="{{ address.url }}"
-                  class="w-full text-xs font-medium text-gray-700 border hover:bg-gray-200 py-2">Delete</button>
+                  class="w-full text-xs font-medium  border hover:bg-gray-200 py-2">Delete</button>
               </div>
 
               <form action="{{ address.url }}" method="post">
@@ -170,19 +176,19 @@
 
             <!-- Edit Address -->
 
-            <div x-show="address_{{ address.id }}"class="h-full w-full fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto z-50">
-              <div class="relative max-w-md mx-auto bg-white border top-20 bottom-20 p-4">
+            <div x-show="address_{{ address.id }}"class="h-full w-full fixed inset-0 bg-gray-900 bg-opacity-50 overflow-y-auto z-50">
+              <div class="relative max-w-md mx-auto bg-gray-800 border top-20 bottom-20 p-4 address-form">
                 <div class="flex items-center justify-between mb-4">
                   <h2 class="text-lg font-medium">Edit address</h2>
-                  <button x-on:click="address_{{ address.id }} = false"class="text-gray-500">{% render 'icon-close' %}</button>
+                  <button x-on:click="address_{{ address.id }} = false">{% render 'icon-close' %}</button>
                 </div>
 
                 {% form 'customer_address', address %}
 
                   <div class="mb-4">
-                    <label for="address_fname_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">First Name</label>
+                    <label for="address_fname_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">First Name</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="text"
                       name="address[first_name]"
                       value="{{ form.first_name }}"
@@ -190,9 +196,9 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_lname_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Last Name</label>
+                    <label for="address_lname_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Last Name</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="text"
                       name="address[last_name]"
                       value="{{ form.last_name }}"
@@ -200,9 +206,9 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_company_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Company</label>
+                    <label for="address_company_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Company</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="text"
                       name="address[company]"
                       value="{{ form.company }}"
@@ -210,9 +216,9 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_address1_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Address 1</label>
+                    <label for="address_address1_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Address 1</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="text"
                       name="address[address1]"
                       value="{{ form.address1 }}"
@@ -220,9 +226,9 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_address2_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Address 2</label>
+                    <label for="address_address2_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Address 2</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="text"
                       name="address[address2]"
                       value="{{ form.address2 }}"
@@ -230,9 +236,9 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_city_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">City</label>
+                    <label for="address_city_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">City</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="text"
                       name="address[city]"
                       value="{{ form.city }}"
@@ -240,11 +246,11 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_country_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Country</label>
+                    <label for="address_country_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Country</label>
                     <select
                       data-country-selector
                       data-id="{{ form.id }}"
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       name="address[country]"
                       value="{{ form.country }}"
                       id="address_country_{{ form.id }}">
@@ -253,18 +259,18 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_province_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">State / Province</label>
+                    <label for="address_province_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">State / Province</label>
                     <select
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       name="address[province]"
                       value="{{ form.province }}"
                       id="address_province_{{ form.id }}"></select>
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_zip_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Postal/ZIP Code</label>
+                    <label for="address_zip_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Postal/ZIP Code</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="text"
                       name="address[zip]"
                       value="{{ form.zip }}"
@@ -272,9 +278,9 @@
                   </div>
 
                   <div class="mb-4">
-                    <label for="address_phone_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Phone Number</label>
+                    <label for="address_phone_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Phone Number</label>
                     <input
-                      class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+                      class="w-full  border px-4 py-3 focus:outline-none"
                       type="tel"
                       name="address[phone]"
                       value="{{ form.phone }}"
@@ -283,12 +289,12 @@
 
                   <div class="mb-4">
                     {{ form.set_as_default_checkbox }}
-                    <label for="address_default_address_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">Set as default address?</label>
+                    <label for="address_default_address_{{ form.id }}" class="uppercase  text-xs font-medium mb-2">Set as default address?</label>
                   </div>
 
                   <div class="flex flex-row gap-2">
                     <button type="submit" class="w-full font-medium text-white bg-gray-700 hover:bg-gray-900 px-4 py-2">Edit Address</button>
-                    <button type="reset" class="w-full font-medium text-gray-700 border border-gray-700 px-4 py-2">Cancel</button>
+                    <button type="reset" class="w-full font-medium  border border-gray-700 px-4 py-2">Cancel</button>
                   </div>
 
                 {% endform %}
