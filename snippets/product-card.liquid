@@ -2,7 +2,7 @@
   <div class="border-2 border-gray-900 bg-white shadow-lg rounded-lg overflow-hidden px-4">
     <a href="{{ product.url }}">
       {% if product.featured_image %}
-        <div class="h-80 overflow-hidden">
+        <div class="h-70 overflow-hidden">
           {{ product.featured_image | image_url: width: 300 | image_tag: class: "w-full h-full object-cover transition duration-1000 ease-in-out hover:scale-105 transform", alt: product.featured_image.alt }}
         </div>
       {% else %}
