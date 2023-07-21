@@ -12,11 +12,11 @@
       "type": "featured-organizations",
       "settings": {
         "collection_list": [
-          "nfl",
-          "nba",
-          "mlb",
-          "nhl",
-          "ncaa"
+          "blankets",
+          "crystal-flared-mugs",
+          "crystal-tumblers",
+          "copper-moscow-mule-mugs",
+          "stainless-steel-thermoses"
         ]
       }
     },
