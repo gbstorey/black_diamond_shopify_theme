@@ -37,7 +37,7 @@
       <div class="product--medias">
         <div class="hidden md:block">
           {% for media in product.media %}
-            <div class="h-100 overflow-hidden">
+            <div class="h-100 overflow-hidden m-12">
               {% render 'product-media', media: media %}
             </div>
           {% endfor %}
@@ -147,14 +147,10 @@
               <div class="my-3">
                 <button
                   type="submit"
+                  id="cart_button"
                   name="add"
-                  class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
-                  {% if selected_variant.inventory_quantity == 0 %}disabled{% endif %}>
-                  {% if selected_variant.inventory_quantity <= 0 %}
-                    Sold Out
-                  {% else %}
-                    Add to Cart
-                  {% endif %}
+                  class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2">
+                  Add to Cart
                 </button>
               </div>
 
@@ -205,11 +201,13 @@
     constructor() {
       super();
       this.addEventListener("change", this.onVariantChange);
+      this.onVariantChange();
     }
     onVariantChange() {
       this.getSelectedOptions();
       this.getSelectedVariant();
       if (this.currentVariant) {
+        this.updateCartButton()
         this.updateURL();
         this.updateFormID();
         this.updatePrice();
@@ -218,11 +216,14 @@
 
     getSelectedOptions() {
       this.options = Array.from(this.querySelectorAll('select'), select => select.value)
+      console.log(this.options)
     }
 
     getVariantJSON() {
       this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+      console.log(this.variantData)
       return this.variantData;
+
     }
 
     getSelectedVariant() {
@@ -230,6 +231,7 @@
         const findings = !variant.options.map((option, index) => {
           return this.options[index] === option
         }).includes(false);
+        console.log(this.currentVariant)
         if (findings) 
           return variant;
         
@@ -256,6 +258,19 @@
     updateFormID() {
       const form_input = document.querySelector("#product-form").querySelector('input[name="id"]');
       form_input.value = this.currentVariant.id;
+    }
+
+    updateCartButton() {
+      console.log(this.currentVariant.inventory_quantity)
+      const checkout_button = document.querySelector("#cart_button");
+      if (!this.currentVariant.available) {
+        checkout_button.setAttribute("disabled", true);
+        checkout_button.textContent = "Sold Out";
+      } else {
+        checkout_button.removeAttribute("disabled")
+        checkout_button.textContent = "Add to Cart"
+      }
+
     }
 
     updatePrice() {
