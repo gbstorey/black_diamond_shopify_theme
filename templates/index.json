@@ -1,13 +1,28 @@
 {
-      "sections": {
-            "hero-section": {
-                  "type": "hero-section",
-                  "settings": {
-                        "image": "shopify://shop_images/301353331_583691570148248_5559993468893791668_n.png",
-                        "heroHeadline": "The perfect gift for your favorite fanatic.",
-                        "heroDescription": "Discover the best sports merchandise while helping to support special needs children."
-                  }
-            }
-      },
-      "order": ["hero-section"]
+  "sections": {
+    "hero-section": {
+      "type": "hero-section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/301353331_583691570148248_5559993468893791668_n.png",
+        "heroHeadline": "The perfect gift for your favorite fanatic.",
+        "heroDescription": "Discover the best sports merchandise while helping to support special needs children."
+      }
+    },
+    "6d93ae91-e572-4ec2-8f75-2ed605dcad3e": {
+      "type": "featured-organizations",
+      "settings": {
+        "collection_list": [
+          "nfl",
+          "ncaa",
+          "mlb",
+          "nba",
+          "nhl"
+        ]
+      }
+    }
+  },
+  "order": [
+    "hero-section",
+    "6d93ae91-e572-4ec2-8f75-2ed605dcad3e"
+  ]
 }
