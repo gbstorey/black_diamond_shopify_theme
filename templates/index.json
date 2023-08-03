@@ -13,7 +13,10 @@
       "settings": {
         "collection_list": [
           "nfl",
-          "nba"
+          "ncaa",
+          "mlb",
+          "nba",
+          "nhl"
         ]
       }
     }
