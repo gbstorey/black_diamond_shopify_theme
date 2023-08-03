@@ -641,10 +641,6 @@ video {
   margin: -0.75rem;
 }
 
-.m-6 {
-  margin: 1.5rem;
-}
-
 .m-12 {
   margin: 3rem;
 }
@@ -892,6 +888,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-52 {
+  height: 13rem;
 }
 
 .min-h-full {
@@ -1473,6 +1473,10 @@ video {
   padding-top: 1.5rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1951,6 +1955,10 @@ video {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .md\:flex-row {
