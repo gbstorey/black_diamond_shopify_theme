@@ -63,12 +63,19 @@
           "tennessee-titans"
         ]
       }
+    },
+    "b3d09dff-3077-4ca5-b8d5-b0e25a3b1de1": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact Us!"
+      }
     }
   },
   "order": [
     "hero-section",
     "6d93ae91-e572-4ec2-8f75-2ed605dcad3e",
     "66d3c4d6-64e9-48d7-aad7-f337c4f6847f",
-    "a524d3d4-9c5c-40db-9699-5008f2f28903"
+    "a524d3d4-9c5c-40db-9699-5008f2f28903",
+    "b3d09dff-3077-4ca5-b8d5-b0e25a3b1de1"
   ]
 }
