@@ -9,7 +9,7 @@
 
       <div class="w-32 h-32 md:w-36 md:h-36 rounded-full">
         <a href="{{ collection.url }}">
-          {{ collection_image | image_url: width: 200 | image_tag: class: "w-full h-full object-contain transition duration-500 ease-in-out rounded-full border-2 border-gray-900 hover:border-4", alt: collection.title }}
+          {{ collection_image | image_url: width: 200 | image_tag: class: "w-full h-full object-contain bg-white transition duration-500 ease-in-out rounded-full border-2 border-gray-900 hover:border-4", alt: collection.title }}
         </a>
       </div>
     {% endfor %}
