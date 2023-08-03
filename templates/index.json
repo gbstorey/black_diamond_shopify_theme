@@ -19,10 +19,56 @@
           "nhl"
         ]
       }
+    },
+    "66d3c4d6-64e9-48d7-aad7-f337c4f6847f": {
+      "type": "hero-section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/46323409_1828709827251294_8651730229267529728_n_a9aabf31-3bb7-4241-af69-f4f56a5a4a45.jpg",
+        "heroHeadline": "Check out our NFL merch!",
+        "heroDescription": "Luxury plush blankets, premium drinkware, and killer decorations. We've got it all."
+      }
+    },
+    "a524d3d4-9c5c-40db-9699-5008f2f28903": {
+      "type": "featured-organizations",
+      "settings": {
+        "collection_list": [
+          "arizona-cardinals",
+          "atlanta-falcons",
+          "baltimore-ravens",
+          "buffalo-bills",
+          "carolina-panthers",
+          "chicago-bears",
+          "cincinnati-bengals",
+          "cleveland-browns",
+          "dallas-cowboys",
+          "denver-broncos",
+          "detroit-lions",
+          "green-bay-packers",
+          "houston-texans",
+          "indianapolis-colts",
+          "jacksonville-jaguars",
+          "kansas-city-chiefs",
+          "los-angeles-chargers",
+          "los-angeles-rams",
+          "miami-dolphins",
+          "minnesota-vikings",
+          "new-orleans-saints",
+          "new-york-giants",
+          "new-york-jets",
+          "oakland-raiders",
+          "philadelphia-eagles",
+          "pittsburgh-steelers",
+          "seattle-seahawks",
+          "tampa-bay-buccaneers",
+          "tennessee-titans"
+        ]
+      }
     }
   },
   "order": [
     "hero-section",
-    "6d93ae91-e572-4ec2-8f75-2ed605dcad3e"
+    "6d93ae91-e572-4ec2-8f75-2ed605dcad3e",
+    "66d3c4d6-64e9-48d7-aad7-f337c4f6847f",
+    "a524d3d4-9c5c-40db-9699-5008f2f28903"
   ]
 }
